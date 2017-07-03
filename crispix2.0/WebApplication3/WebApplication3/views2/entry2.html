@@ -1,0 +1,47 @@
+﻿<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="/javascript/controllers/controllers.js" type="text/javascript"></script>
+    <link href="/css/crispix.css" rel="stylesheet" type="text/css" />
+
+    <title></title>
+</head>
+<body ng-app ="entry" ng-cloak="true">
+    <div align="center">
+        <!--ng-app tells html that there's some angularjs in here-->
+        <!--Set the header
+            ng-include isn't ideal for massive websites, but works just fine here-->
+        <div ng-include="'header.html'" align="center"></div>
+
+        <!-- Main content-->
+        <div id="mainStuff">
+            <br />
+            Login to make your pix
+            <form action=entry.cs method="post"></form>
+            <table id="entryTable" border="1" width="600">
+                
+                <tr>
+                    <td>
+                        <form ng-app="crispix" ng-controller="entryCtrl" align="center">
+                            <br />
+                            Username: <input type="text" maxlength="15" ng-model="username" size="15" />
+                            Password: <input type="password" maxlength="15" ng-model="password" size="15" />
+                            <button type="submit">Make/Update Pix</button>
+                            <br />
+                            <br />
+                        </form>
+                    </td>
+                </tr>
+            </table>
+            <br /> <br /> <br /> <br />
+            <br /> <br /> <br /> <br />
+            <br /> <br /> <br /> <br />
+            <br /> <br /> <br /> <br />
+
+        </div>
+        <!--Set the footer-->
+        <div ng-include="'footer.html'" align="center"></div>
+    </div>
+</body>
+</html>

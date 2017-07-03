@@ -1,0 +1,52 @@
+c:\users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\WebApplication3.dll.config
+c:\users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\WebApplication3.dll
+c:\users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\WebApplication3.pdb
+c:\users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
+c:\users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\obj\Debug\crispix.csprojResolveAssemblyReference.cache
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\Antlr3.Runtime.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\Newtonsoft.Json.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Helpers.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Mvc.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Optimization.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Razor.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.Razor.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\WebGrease.dll
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\Antlr3.Runtime.pdb
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\Newtonsoft.Json.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Helpers.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Mvc.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Optimization.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.Razor.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\nporter\documents\visual studio 2013\Projects\WebApplication3\WebApplication3\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\WebApplication3.dll.config
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\WebApplication3.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\WebApplication3.pdb
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\Antlr3.Runtime.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\Newtonsoft.Json.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Helpers.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Mvc.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Optimization.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Razor.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.Razor.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\WebGrease.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\Antlr3.Runtime.pdb
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\Newtonsoft.Json.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Helpers.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Mvc.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Optimization.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.Razor.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\bin\System.Web.WebPages.Razor.xml
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\obj\Debug\crispix.csprojResolveAssemblyReference.cache
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\obj\Debug\WebApplication3.dll
+C:\Users\Nathan\Desktop\crispix2.0\crispix2.0\WebApplication3\WebApplication3\obj\Debug\WebApplication3.pdb

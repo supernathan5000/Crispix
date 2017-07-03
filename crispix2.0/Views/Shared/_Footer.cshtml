@@ -1,0 +1,51 @@
+﻿@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<html>
+<head>
+    <meta name="viewport" content="width=device-width" />
+    <link href="~/Styles/crispix.css" rel="stylesheet" type="text/css" />
+    <title></title>
+</head>
+<body>
+    <div>
+        <footer>
+            <table align="center" width="824" border="0" cellpadding="0" cellspacing="0">
+                <tr>
+                    <td align="center">
+                        <nav id="navFoot">
+                            <a class="whttext" href="~/Index.cshtml">Home</a>
+                            |&nbsp; <a class="whttext" href="~/Rules.cshtml">Rules</a>
+                            |&nbsp; <a class="whttext" href="~/Schedule.cshtml">Schedule</a>
+                            |&nbsp; <a class="whttext" href="~/Standings.cshtml">Standings</a>
+                            |&nbsp; <a class="whttext" href="~/Grid.cshtml">Grid</a>
+                            |&nbsp; <a class="whttext" href="~/Links.cshtml">Links</a>
+                            |&nbsp; <a class="whttext" href="~/Enter.cshtml">Pix Entry</a>
+                            |&nbsp; <a class="whttext" href="http://sports.espn.go.com/ncf/rankingsindex">Top 25 Rankings</a> (from ESPN)
+                            <!-- Returns an <a> element
+                                    ActionLink(link text, method, controller, route values, <a> attributes)
+                                                   V       V       V            V                 V
+                            -->
+                            <a>| @Html.ActionLink("Home", "Index", "Home", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Rules", "Index", "Rules", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Enter", "Index", "Enter", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Schedule", "Index", "Schedule", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Standings", "Index", "Standings", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Grid", "Index", "Grid", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("Links", "Index", "Links", routeValues: null, htmlAttributes: new { id = "navlink" })</a>
+                            <a>| @Html.ActionLink("ESPN Top 25 Rankings", "Index", "Links", routeValues: null, htmlAttributes: new { id = "navlink", href = "http://sports.espn.go.com/ncf/rankingsindex" })</a>
+                        </nav>
+                        <hr />
+                        Crispix is not affiliated with www.crispix.com, home of Kellogg's Crispix cereal. However, if you are
+                        hungry for cereal, you can't beat delicious Crispix cereal,<br /> with it's crispy rice on the one side and crunchy corn
+                        on the other. This is not a paid endorsement, just my small way of saying "Please don't sue me, Kelloggs".
+                    </td>
+                </tr>
+            </table>
+        </footer>
+    </div>
+</body>
+</html>

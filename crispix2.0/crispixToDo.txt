@@ -1,0 +1,22 @@
+Things left to do
+Index
+	put together all the views
+	determine conditions for each view
+	try putting php in the chooseHome files to see if it will be executed
+
+Rules
+	getNumberOfWeeks
+	figure out what's up with all the paypals
+	fix the gaps between header/body and body/footer
+
+Entry
+	everything
+
+Schedule
+	everything
+
+Standings
+	everything
+
+Grid
+	everything

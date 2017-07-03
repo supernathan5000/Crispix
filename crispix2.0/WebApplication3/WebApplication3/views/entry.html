@@ -1,0 +1,155 @@
+﻿
+
+<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="/javascript/crispix.js" language="JavaScript"></script>
+    <script src="/javascript/entry_input_controller.js" language="text/JavaScript"></script>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.0/angular.min.js"></script>
+    <title>Crispzone Sports</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link rel="stylesheet" href="/css/crispix.css" type="text/css" />
+</head>
+<body ng-app>
+    <div align="center">
+        <table width="824" border="0" cellpadding="0" cellspacing="0" bgcolor='#ffffff'>
+            <tr>
+                <td>
+                    <div id="menutable">
+                        <span onclick="goTo('/home.html');">
+                            <img src="/images/header.jpg" width="100%" height="84" hspace="0" vspace="0" border="0" />
+                        </span>
+                        <table width="100%" border="0" cellpadding="0" cellspacing="0">
+                            <tr>
+                                <td width=50>&nbsp;</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/home.html');" align='center'>Home</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/rules.html');" align='center'>Rules</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/entry.html');" align='center'>Enter</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/schedule.html');" align='center'>Schedule</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/standings.html');" align='center'>Standings</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/grid.html');" align='center'>Grid</td>
+                                <td bgcolor="#990000" onmouseover="this.bgcolor = '#FFFFFF';" onclick="    goTo('/views/links.html');" align='center'>Links</td>
+                                <td width=50>&nbsp;</td>
+                            </tr>
+                        </table>
+                    </div>
+                </td>
+            </tr>
+
+            <tr>
+                <td align="center" height="">
+                    <br />
+                    <br />
+                    <br />
+
+                    <div ng-cloak="true" >
+                        Username: <input type="text" ng-model="username"/>
+                        Password: <input type="password" ng-model="password"/>
+                        <button type="submit" >Make/Update pix</button>
+                        <br /> <br />
+                        Username = {{var[0]}}
+                        <br /> <br />
+                        Password = {{var[1]}}
+                    </div>
+
+                    <br />
+                    <br />
+
+                    <br />
+                    <br />
+                </td>
+            </tr>
+            <!--
+                                <div align="center"><b>Login to make your pix</b></div>
+                                <table width='600' border='1' cellspacing='0' cellpadding='0' align='center' bordercolor='#990000'>
+                                    <form action=entry.asp method=post>
+                                        <input type='hidden' name='job' value='GetPix'>
+                                        <tr>
+                                            <td align="center">
+                                                <table width="100%" border=0 cellspacing="3" cellpadding="0" bgcolor="#f3f3f3">
+                                                    <tr>
+                                                        <td height='40' align='right'><b>Username:</b></td>
+                                                        <td align='left'><input type="text" name="user_name" size="15" maxlength="15"></td>
+                                                        <td align='right'><b>Password:</b></td>
+                                                        <td align='left'><input maxlength=15 name=password size=15 type=password></td>
+                                                        <td align='center'><input type=submit value='Make/update Pix'></td>
+                                                    </tr>
+                                                </table>
+                                            </td>
+                                        </tr>
+                                    </form>
+                                </table>
+                                <br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+
+                                <br /><br />
+                            </td>
+                        </tr>-->
+            <tr>
+                <td>
+                    <table width="100%" align="center" bgcolor="#707070">
+                        <tr>
+                            <td align='center' class='whttext'>
+                                <a class='whttext' href="/home.html">Home</a>&nbsp;
+                                |&nbsp; <a class='whttext' href="/views/home.html">Rules</a>
+                                |&nbsp; <a class='whttext' href="/views/schedule.html">Schedule</a>
+                                |&nbsp; <a class='whttext' href="/views/standings.html">Standings</a>
+                                |&nbsp; <a class='whttext' href="/views/grid.html">Grid</a>
+                                |&nbsp; <a class='whttext' href="/views/links.html">Links</a>
+                                |&nbsp; <a class='whttext' href="/views/entry.html">Pix Entry</a>
+                                |&nbsp; <a class='whttext' href="http://sports.espn.go.com/ncf/rankingsindex">Top 25 Rankings</a> (from ESPN)<hr />
+                                Crispix is not affiliated with www.crispix.com, &nbsp;home of Kellogg's Crispix cereal.&nbsp;&nbsp; However, if you are
+                                hungry for cereal, &nbsp;you can't beat delicious Crispix cereal,<br /> with it's crispy rice on the one side and crunchy corn
+                                on the other. &nbsp;&nbsp;This is not a paid endorsement, just my small way of saying "Please don't sue me, Kelloggs".
+                            </td>
+                        </tr>
+                    </table>
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
+
+
+
+<script language="javascript">
+
+    function verify(f) {
+        var empty_fields = "";
+        for (var i = 0; i < f.length; i++) {
+            var e = f.elements[i];
+            if (isblanks(e.value)) {
+                empty_fields += '\n   ' + e.name + ' is blank';
+            }
+            if (!validchar(e.value.toUpperCase())) {
+                empty_fields += '\n   ' + e.name + ' contains invalid characters';
+            }
+        }
+        if (!(f.password.value == f.password2.value)) {
+            empty_fields += '\n   Passwords do not match';
+        }
+
+        if (empty_fields) {
+            msg = "The following errors were found:\n";
+            msg += empty_fields + "\n\n Please correct and retry.";
+            alert(msg);
+            return false;
+        }
+        return true;
+    }
+    function isblanks(s) {
+        for (var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if ((c != ' ') && (c != '\n') && (c != '\t')) return false;
+        }
+        return true;
+    }
+    function validchar(s) {
+        var goodchars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.@()_ -";
+        for (var i = 0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if (goodchars.indexOf(c) == -1) return false;
+        }
+        return true;
+    }
+</script> 

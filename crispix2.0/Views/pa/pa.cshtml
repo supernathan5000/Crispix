@@ -1,0 +1,138 @@
+﻿
+@{
+    Layout = null;
+}
+
+<!DOCTYPE html>
+
+<HTML>
+<HEAD>
+    <meta name="viewport" content="width=device-width" />
+    <TITLE>Admin Page</TITLE>
+</HEAD>
+<BODY BGCOLOR="White" leftmargin=1 topmargin=1>
+    <div id="mainDiv" align="center">
+        <br>
+        <br>
+        <form action='pa.asp' method='POST'>
+            <input type='hidden' name='cpwd' value='jnp'>
+            <table id="mainTable" border='1' cellpadding='7' bgcolor='#FAF8D1'>
+                <tr>
+                    <td>
+                        <input type='radio' id='gridBtn' name="job" value='GRID'>Show Grid
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='lockBtn' name="job" value='LOCK'>
+                        &nbsp;
+                        <select name='LOCK'>
+                            <option value='YES' SELECTED>Lock Pix</option>
+                            <option value='NO'>Unlock Pix</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='weekBtn' name="job" value='WEEKNUM'>
+                        <select name='WEEKNUM' size=1>
+                            <option value='14'>Set week to Dec 3</option>
+                            <option value='99'>Set week to 99</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='resultsBtn' name="job" value='RESULTS'>Enter Game Results
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='winLossBtn' name="job" value='UPDWL'>Update Users W-L
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='noPickBtn' name="job" value='UPDZEROS'>Update Winners Who Did not Pick
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='changeGamesBtn' name="job" value='CHGGAMES'>
+                        <select name='GAMEWEEK' size=1>
+                            <option value=14>Change Dec 3 games</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='clearGamesBtn' name="job" value='CLRGAMES'>Clear Game Results
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='editBtn' name="job" value='LISTUSERS'>Edit Users
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='defaultPixBtn' name="job" value='DEFPIX'>Default Unpicked
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='commentBtn' name="job" value='COMMENT'>Update Comment
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='backupBtn' name="job" value='BACKUP'>Backup data
+                    </td>
+                </tr>
+                <tr>
+                    <td>
+                        <input type='radio' id='pollsBtn' name="job" value='UPDATEPOLLS'>
+                        Update Polls &nbsp;
+                        <select name='POLL'>
+                            <option value='AP' SELECTED>AP</option>
+                            <option value='USA'>USA Today</option>
+                        </select>
+                    </td>
+                </tr>
+                <tr>
+                    <td align='center'>
+                       @* <input type='Submit' name='Submit' value='Submit Job'>*@
+                        <button name="SubmitBtn"></button>
+                    </td>
+                </tr>
+            </table>
+        </form>
+    </div>
+</BODY>
+</HTML>
+
+<script>
+    $(document).ready(function() {
+
+        $("#Submit").click(function() {
+
+            
+            var radioButtons = $('table#mainTable input[type="radio"]');
+
+            for (i = 0; i < radioButtons.length; i++) {
+
+                if (radioButtons[i].checked) {
+
+                    ViewBag.name = radioButtons[i].name;
+                    $("#mainDiv").html = @{ Html.RenderPartial(ViewBag.name); }
+                }
+            }
+            if (radioButtonsOther[0].checked) {
+
+            }
+
+        });
+
+    });
+
+</script>

@@ -1,0 +1,27 @@
+﻿<!DOCTYPE HTML PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.3/angular.min.js"></script>
+    <script src="/javascript/crispix.js" language="JavaScript"></script>
+    <script src="/javascript/countdown-clock.js" language="JavaScript"></script>
+    <script src="/javascript/index.js" language="JavaScript"></script>
+    <title>Crispzone Sports</title>
+    <meta http-equiv="Content-Type" content="text/html; charset=iso-8859-1" />
+    <link href="/css/crispix.css" rel="stylesheet" type="text/css" />
+</head>
+<body ng-app ng-cloak="true"> <!--ng-app tells html that there's some angularjs in here-->
+    <div align="center">
+        <!--Set the header-->
+        <!--ng-include isn't ideal for massive websites, but works just fine here-->
+        <div ng-include="'views2/header.html'" align="center"></div>
+        <!-- Main content-->
+        <div id="mainStuff" align="center" >
+            <br />
+            Some words
+            <br />
+        </div>
+        <!--Set the footer-->
+        <div ng-include="'views2/footer.html'" align="center"></div>
+    </div>
+</body>
+</html>
