@@ -1,6 +1,6 @@
 ﻿
 @{
-    Layout = null;
+    Layout = "../Shared/_Layout.cshtml";
 }
 
 <!DOCTYPE html>
@@ -11,7 +11,74 @@
     <title>EntryMain</title>
 </head>
 <body>
-    <div> 
-    </div>
+<div>
+    <div align="center"><b>Login to make your pix</b></div>
+    <table width="600" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#990000">
+        <FORM action=entry.asp method=post>
+            <input type="hidden" name="job" value="GetPix">
+            <TR><td align="center">
+                <table width="100%" border=0 cellspacing="3" cellpadding="0" bgcolor="#f3f3f3">
+                    <TR><td height="40" align="right"><b>Username:</b></td>
+                        <TD align="left"><input type="text" name="user_name" size="15" maxlength="15"></TD>
+                        <TD align="right"><b>Password:</b></TD>
+                        <TD align="left"><INPUT maxLength=15 name=password size=15 type=password></TD>
+                        <td align="center"><INPUT type=submit value="Make/update Pix"></td></tr></TABLE>
+            </td></TR></FORM></TABLE>
+
+    @if (ViewBag.isPreseason)
+    {
+        Html.RenderPartial("_NewEntry");
+    }
+
+</div>
 </body>
 </html>
+
+<SCRIPT LANGUAGE="javascript"> 
+
+    function verify(f)
+    {
+        var empty_fields = "";
+        for(var i = 0; i < f.length; i++) {
+            var e = f.elements[i];
+            if (isblanks(e.value)) {
+                empty_fields += '\n   ' + e.name + ' is blank';}    
+            if (!validchar(e.value.toUpperCase()))  {
+                empty_fields += '\n   ' + e.name + ' contains invalid characters';}  
+        }
+        if (!(f.password.value == f.password2.value)) {	 
+            empty_fields += '\n   Passwords do not match';}  
+
+        if (empty_fields) {  
+            msg = "The following errors were found:\n";
+            msg += empty_fields + "\n\n Please correct and retry.";
+            alert(msg);
+            return false;
+        }
+        return true;
+    }
+    function isblanks(s)
+    {
+        for(var i=0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if ((c != ' ') && (c != '\n') && (c != '\t')) return false;
+        }
+        return true;
+    }
+    function validchar(s)
+    {
+        var goodchars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.@()_ -";
+        for(var i=0; i < s.length; i++) {
+            var c = s.charAt(i);
+            if (goodchars.indexOf(c)==-1) return false;
+        }
+        return true;
+    }
+
+    function ValidateUsername() {
+        //send username to the server
+        //server determines if username is good or bad
+        //return success/failure
+    }
+
+</SCRIPT> 

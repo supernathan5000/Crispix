@@ -9,9 +9,9 @@ namespace crispix2._0.Controllers
     public class ScheduleController : Controller
     {
         // GET: Schedule
-        public ActionResult Index()
+        public ActionResult Schedule()
         {
-            return View();
+            return View("Schedule");
         }
     }
 }

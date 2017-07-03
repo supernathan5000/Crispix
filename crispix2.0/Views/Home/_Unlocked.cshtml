@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,7 +10,28 @@
     <title>_Unlocked</title>
 </head>
 <body>
-    <div> 
+    <div>
+        <table border=0 cellspacing=0 cellpadding=0 width='100%'>
+            <tr>
+                <td><%=maincmt%></td>
+            </tr>
+            <tr>
+                <td valign='top'>
+                    <!--#include virtual="/crispix/stats-new.asp"-->
+                </td>
+            </tr></table>
     </div>
 </body>
 </html>
+
+
+@*sub ShowUnlocked 'after week 1
+getPlayerCount%>
+<table border=0 cellspacing=0 cellpadding=0 width='100%'>
+    <tr><td><%=maincmt%></td></tr>
+    <tr><td valign='top'>
+        <!--#include virtual="/crispix/stats-new.asp"--> 
+    </td></tr></table>
+<%
+ShowTopTen("NO")
+end sub*@

@@ -26,23 +26,20 @@ namespace crispix2._0.Controllers
             if (viewName.Equals("changeGames"))
                 return PartialView("_changeGames");
 
-            else if(viewName.Equals("editUser"))
+            if (viewName.Equals("editUser"))
                 return PartialView("_editUser");
 
-            else if(viewName.Equals("enterGameResults"))
+            if (viewName.Equals("enterGameResults"))
                 return PartialView("_enterGameResults");
 
-            else if(viewName.Equals("listUsers"))
+            if (viewName.Equals("listUsers"))
                 return PartialView("_listUsers");
 
-            else if(viewName.Equals("showGrid"))
+            if (viewName.Equals("showGrid"))
                 return PartialView("_showGrid");
 
-            else
+            return null;
 
         }
-
-
-
     }
 }

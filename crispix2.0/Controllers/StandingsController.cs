@@ -9,9 +9,9 @@ namespace crispix2._0.Controllers
     public class StandingsController : Controller
     {
         // GET: Standings
-        public ActionResult Index()
+        public ActionResult Standings()
         {
-            return View();
+            return View("Standings");
         }
     }
 }

@@ -1,5 +1,4 @@
-﻿
-@{
+﻿@{
     Layout = null;
 }
 
@@ -11,7 +10,75 @@
     <title>_Final</title>
 </head>
 <body>
-    <div> 
+    <div>
+        <table border="0" cellspacing="0" cellpadding="0" width="100%">
+            <tr>
+                <td align="center">
+                    <h3>Congratulations to BAMA BULLDOG<br />and to all the winners!</h3>
+                </td>
+            </tr>
+            <tr>
+                <td align="center" valign="top">
+                    <table width="400" border="1" cellspacing="0" cellpadding="0">
+                        <tr>
+                            <td bgcolor="#FFFFCC">
+                                <table border="0" cellpadding="0" cellspacing="0">
+                                    <tr>
+                                        <th height="15" colspan="3" align="center" scope="col"><B>2014 CRISPIX WINNERS</B></th>
+                                    </tr>
+                                    <tr>
+                                        <td align="right">&nbsp;1st:&nbsp;</td>
+                                        <td align="right">$422&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><b>BAMA BULLDOG</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" valign="top">&nbsp;2nd/3rd:&nbsp;</td>
+                                        <td align="right" valign="top">$148&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><b>OUFANINGA,RAY DONOVAN</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td align="right" valign="top">&nbsp;4th/5th:&nbsp;</td>
+                                        <td align="right" valign="top">$25&nbsp;&nbsp;&nbsp;</td>
+                                        <td align="left"><b>LEO1995,ONDEADLINE,OUWANTSUM2,PAC12HUSKY,SLICK WILLY</b></td>
+                                    </tr>
+                                    <tr>
+                                        <td colspan="3" height="15">&nbsp;Consolation - free bowl contest entry goes to <b>HEYWOOD</b>&nbsp;</td>
+                                    </tr>
+                                </table>
+                            </td>
+                        </tr></table>
+                    <br/>
+                    <div align="center">
+                        <b>Bowls Contest Starts Here Tuesday Night!</b>
+                    </div>
+                    <br/>
+                </td>
+            </tr>
+        </table>
     </div>
 </body>
 </html>
+
+@*
+
+sub ShowFinal
+getPlayerCount%>
+<table border=0 cellspacing=0 cellpadding=0 width="100%">
+    <tr><td align="center"><h3>Congratulations to BAMA BULLDOG<br />and to all the winners!</h3></td></tr>
+    <tr><td align="center" valign="top">
+        <table width=400 border="1" cellspacing="0" cellpadding="0">
+            <tr><td bgcolor="#FFFFCC">
+                <table border="0" cellpadding="0" cellspacing="0">
+                    <tr><th height="15" colspan="3" align="center" scope="col"><B>2014 CRISPIX WINNERS</B></th></tr>
+                    <tr><td align="right">&nbsp;1st:&nbsp;</td><td align="right">$422&nbsp;&nbsp;&nbsp;</td><td align="left"><b>BAMA BULLDOG</b></td></tr>
+                    <tr><td align="right" valign="top">&nbsp;2nd/3rd:&nbsp;</td><td align="right" valign="top">$148&nbsp;&nbsp;&nbsp;</td><td align="left"><b>OUFANINGA,RAY DONOVAN</b></td></tr>
+                    <tr><td align="right" valign="top">&nbsp;4th/5th:&nbsp;</td><td align="right" valign="top">$25&nbsp;&nbsp;&nbsp;</td><td align="left"><b>LEO1995,ONDEADLINE,OUWANTSUM2,PAC12HUSKY,SLICK WILLY</b></td></tr>
+                    <tr><td colspan=3 height="15">&nbsp;Consolation - free bowl contest entry goes to <b>HEYWOOD</b>&nbsp;</td></tr>           
+                </table>
+            </td></tr></table>
+        <br /><div align="center"><b>Bowls Contest Starts Here Tuesday Night!</b></div><br />
+    </td></tr></table>
+<%
+ShowTopTen("NO")
+end sub
+*@

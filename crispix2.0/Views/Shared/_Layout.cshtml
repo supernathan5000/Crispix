@@ -10,11 +10,11 @@
 </head>
 <body>
     <div align="center">
-        @Html.Partial("_Header")
+        @RenderPage("_Header.cshtml")
 
         @RenderBody()
 
-        @Html.Partial("_Footer")
+        @RenderPage("_Footer.cshtml")
     </div>
     @*<div class="navbar navbar-inverse navbar-fixed-top">
         <div class="container">

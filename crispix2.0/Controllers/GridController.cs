@@ -9,9 +9,9 @@ namespace crispix2._0.Controllers
     public class GridController : Controller
     {
         // GET: Grid
-        public ActionResult Index()
+        public ActionResult Grid()
         {
-            return View();
+            return View("Grid");
         }
     }
 }

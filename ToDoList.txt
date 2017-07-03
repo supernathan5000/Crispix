@@ -1,0 +1,10 @@
+Have HomeController.setHomePage access the DB to get the values of those variables
+Have HomeController.getComment 
+Make the CSS dynamic - use % of screen, not hardcoded pixels
+Make the CSS more readable - especially the Links page
+
+
+
+
+Helpful stuff:
+https://stackoverflow.com/questions/10056583/fixed-header-footer-and-sidebars-with-scrolling-content-area-in-center

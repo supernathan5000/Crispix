@@ -9,7 +9,7 @@ namespace crispix2._0.Controllers
     public class RulesController : Controller
     {
         // GET: Rules
-        public ActionResult Index()
+        public ActionResult Rules()
         {
             //ViewBag.Title = "Crispix - Rules";
             return View("Rules");

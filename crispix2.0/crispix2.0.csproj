@@ -211,6 +211,7 @@
     </Compile>
     <Compile Include="Infrastructure\Constants.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Home\HomeLoad.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -279,7 +280,7 @@
     <Content Include="Views\Shared\_LoginPartial.cshtml" />
     <Content Include="Views\Shared\_Footer.cshtml" />
     <Content Include="Views\Shared\_Header.cshtml" />
-    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Home\Home.cshtml" />
     <Content Include="Views\Enter\EnterMain.cshtml" />
     <Content Include="Views\Enter\EnterPix.cshtml" />
     <Content Include="Views\Bowls\Bowls.cshtml" />
@@ -297,12 +298,13 @@
     <Content Include="Views\pa\_changeGames.cshtml" />
     <Content Include="Views\pa\_listUsers.cshtml" />
     <Content Include="Views\pa\_editUser.cshtml" />
+    <Content Include="Views\Standings\Standings.cshtml" />
+    <Content Include="Views\Grid\Grid.cshtml" />
+    <Content Include="Views\Home\Index.cshtml" />
+    <Content Include="Views\Enter\_NewEntry.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
-    <Folder Include="Views\Entry\" />
-    <Folder Include="Views\Grid\" />
-    <Folder Include="Views\Standings\" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="fonts\glyphicons-halflings-regular.woff" />

@@ -9,13 +9,13 @@ namespace crispix2._0.Controllers
     public class LinksController : Controller
     {
         // GET: Links
-        public ActionResult Index()
+        public ActionResult Links()
         {
             ViewBag.Title = "Crispix - Links";
             return View("Links");
         }
 
-        public ActionResult Links()
+        public ActionResult espnLinks()
         {
             return Redirect("http://sports.espn.go.com/ncf/rankingsindex");
         }
