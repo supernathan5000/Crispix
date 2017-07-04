@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using System.Text.RegularExpressions;
 
 namespace crispix2._0.Controllers
 {
@@ -13,7 +14,19 @@ namespace crispix2._0.Controllers
         {
             //if EnterMain return View("EnterMain");
             //else return View("EnterPix");
+
+            ViewBag.isPreseason = true;
             return View("EnterMain");
+        }
+
+        public bool ValidateUsername(string username)
+        {
+            var regex = new Regex(@"^(?=[a-zA-Z])[-\w.]{0,23}([a-zA-Z\d]|(?<![-.])_)$");
+            if (regex.IsMatch(username))
+            {
+                return true;
+            }
+            return false;
         }
 
 

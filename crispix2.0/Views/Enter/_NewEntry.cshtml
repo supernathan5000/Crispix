@@ -1,4 +1,4 @@
-﻿<form action=chkuser.asp method=post onSubmit='return verify(this);'>
+﻿<form method=post onSubmit='return verify(this);'>
     <br><br>
     <div align="center"><b>or Create a New Player ID (all records from previous contests are erased)</b></div>
     <table width='600' border='1' cellspacing='0' cellpadding='0' align='center' bordercolor='#990000'>
@@ -54,7 +54,7 @@
                     </tr>
                     <tr><td>&nbsp;<br></td></tr>
                     <tr>
-                        <td colspan=5 align='center'><INPUT type=submit value='Sign Me Up'></td>
+                        <td colspan=5 align='center'><INPUT type=submit value='Sign Me Up' id="signUpBtn"></td>
                     </tr>
                 </table>
             </td>
@@ -63,3 +63,38 @@
 </form>   
 <br /> 
 <br />
+
+<script>
+
+    $signUpBtn.onclick(function () {
+
+        var _username = user_name.textContent;
+        var _password = password.textContent;
+
+        var url = @Url.Action("ValidateUsername", "Enter") + "?username = " + _username;
+        var data = {
+            Username : _username
+        }
+
+        $.ajax({
+            url: url,
+            data: data,
+            success: function (result) {
+                var pass = JSON.parse(result);
+                if (pass) {
+                    //let user know everything worked
+                    alert("Everything worked! Woohoo!");
+                }
+                else {
+                    alert("Make sure your username on contains A-Z, a-z, 0-9, _, -");
+                }
+            },
+            failure: function (result) {
+                //let user know something is wrong
+                alert("Everything is broken!");
+            }
+        });
+
+    });
+
+</script>

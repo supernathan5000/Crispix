@@ -14,7 +14,7 @@
 <div>
     <div align="center"><b>Login to make your pix</b></div>
     <table width="600" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#990000">
-        <FORM action=entry.asp method=post>
+        <FORM method=post>
             <input type="hidden" name="job" value="GetPix">
             <TR><td align="center">
                 <table width="100%" border=0 cellspacing="3" cellpadding="0" bgcolor="#f3f3f3">
@@ -34,7 +34,7 @@
 </body>
 </html>
 
-<SCRIPT LANGUAGE="javascript"> 
+<SCRIPT LANGUAGE="javascript">
 
     function verify(f)
     {
@@ -42,14 +42,14 @@
         for(var i = 0; i < f.length; i++) {
             var e = f.elements[i];
             if (isblanks(e.value)) {
-                empty_fields += '\n   ' + e.name + ' is blank';}    
+                empty_fields += '\n   ' + e.name + ' is blank';}
             if (!validchar(e.value.toUpperCase()))  {
-                empty_fields += '\n   ' + e.name + ' contains invalid characters';}  
+                empty_fields += '\n   ' + e.name + ' contains invalid characters';}
         }
-        if (!(f.password.value == f.password2.value)) {	 
-            empty_fields += '\n   Passwords do not match';}  
+        if (!(f.password.value == f.password2.value)) {
+            empty_fields += '\n   Passwords do not match';}
 
-        if (empty_fields) {  
+        if (empty_fields) {
             msg = "The following errors were found:\n";
             msg += empty_fields + "\n\n Please correct and retry.";
             alert(msg);
@@ -65,7 +65,7 @@
         }
         return true;
     }
-    function validchar(s)
+    @*function validchar(s)
     {
         var goodchars = "ABCDEFGHIJKLMNOPQRSTUVWXYZ0123456789.@()_ -";
         for(var i=0; i < s.length; i++) {
@@ -73,12 +73,43 @@
             if (goodchars.indexOf(c)==-1) return false;
         }
         return true;
-    }
+    }*@
 
     function ValidateUsername() {
         //send username to the server
         //server determines if username is good or bad
         //return success/failure
     }
+
+    $signUpBtn.onclick(function () {
+
+        var _username = user_name.textContent;
+        var _password = password.textContent;
+
+        var url = @Url.Action("ValidateUsername", "Enter") + "?username=" + _username;
+        var data = {
+            Username : _username
+        }
+
+        $.ajax({
+            url: url,
+            data: data,
+            success: function (result) {
+                var pass = JSON.parse(result);
+                if (pass) {
+                    //let user know everything worked
+                    alert("Everything worked! Woohoo!");
+                }
+                else {
+                    alert("Make sure your username on contains A-Z, a-z, 0-9, _, -");
+                }
+            },
+            failure: function (result) {
+                //let user know something is wrong
+                alert("Everything is broken!");
+            }
+        });
+
+    });
 
 </SCRIPT> 
