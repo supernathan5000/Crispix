@@ -205,15 +205,18 @@
     <Compile Include="Controllers\paController.cs" />
     <Compile Include="Controllers\RulesController.cs" />
     <Compile Include="Controllers\ScheduleController.cs" />
-    <Compile Include="Controllers\StandingsController.cs" />
+    <Compile Include="Infrastructure\StandingsController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Infrastructure\Constants.cs" />
+    <Compile Include="Infrastructure\Utilities.cs" />
     <Compile Include="Models\AccountViewModels.cs" />
+    <Compile Include="Models\Grid\GridLoad.cs" />
     <Compile Include="Models\Home\HomeLoad.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Standings\StandingsLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />
   </ItemGroup>
@@ -302,6 +305,7 @@
     <Content Include="Views\Grid\Grid.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Enter\_NewEntry.cshtml" />
+    <Content Include="Views\Standings\_StandingsTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

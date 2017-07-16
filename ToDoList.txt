@@ -2,9 +2,10 @@ Have HomeController.setHomePage access the DB to get the values of those variabl
 Have HomeController.getComment 
 Make the CSS dynamic - use % of screen, not hardcoded pixels
 Make the CSS more readable - especially the Links page
+Update Utilities.cs to have _pixLocked get that value from the database
+Update Utilities.cs to have _numberOfWeeks get that value from the database
 
 
 
 
 Helpful stuff:
-https://stackoverflow.com/questions/10056583/fixed-header-footer-and-sidebars-with-scrolling-content-area-in-center

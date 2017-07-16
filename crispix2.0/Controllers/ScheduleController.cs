@@ -11,7 +11,7 @@ namespace crispix2._0.Controllers
         // GET: Schedule
         public ActionResult Schedule()
         {
-            return View("Schedule");
+            return View();
         }
     }
 }
