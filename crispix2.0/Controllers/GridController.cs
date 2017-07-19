@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using crispix2._0.Models.Grid;
+using crispix2._0.Infrastructure;
 
 namespace crispix2._0.Controllers
 {
@@ -15,10 +16,16 @@ namespace crispix2._0.Controllers
 
             GridLoad model = new GridLoad();
 
-            //GetGrid(model);
+            GetGrid(model);
             
 
             return View(model);
+        }
+
+        private void GetGrid(GridLoad model)
+        {
+            var result = Utilities.SelectQuery(Constants.GetPlayersTableName, new string[]{ "PLAYER" });
+
         }
 
         //private void GetGrid(GridLoad model)

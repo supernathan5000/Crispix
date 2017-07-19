@@ -11,7 +11,7 @@ namespace crispix2._0.Models.Standings
     public class StandingsLoad
     {
         public List<StandingsRow> StandingsList { get; set; }
-        public int NumberOfWeeks = new Utilities().GetNumberOfWeeks();
+        public int NumberOfWeeks = Utilities.GetNumberOfWeeks();
     }
 
     public class StandingsRow

@@ -1,6 +1,7 @@
 ﻿@{
     Layout = null;
 }
+@using crispix2._0.Infrastructure;
 
 <!DOCTYPE html>
 
@@ -37,7 +38,7 @@
                             <a>| @Html.ActionLink("Standings", "Standings", "Standings", routeValues: null, htmlAttributes: new {id = "navlink"})</a>
                             <a>| @Html.ActionLink("Grid", "Grid", "Grid", routeValues: null, htmlAttributes: new {id = "navlink"})</a>
                             <a>| @Html.ActionLink("Links", "Links", "Links", routeValues: null, htmlAttributes: new {id = "navlink"})</a>
-                            <a>| @Html.ActionLink("ESPN Top 25 Rankings", "espnLinks", "Links", routeValues: null, htmlAttributes: new {id = "navlink", href = "http://sports.espn.go.com/ncf/rankingsindex"})</a>
+                            <a>| @Html.ActionLink("ESPN Top 25 Rankings", "espnLinks", "Links", routeValues: null, htmlAttributes: new {id = "navlink", href = Constants.espnTop25})</a>
                         </nav>
                         <hr />
                         Crispix is not affiliated with www.crispix.com, home of Kellogg's Crispix cereal. However, if you are
