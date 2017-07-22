@@ -216,6 +216,7 @@
     <Compile Include="Models\Home\HomeLoad.cs" />
     <Compile Include="Models\IdentityModels.cs" />
     <Compile Include="Models\ManageViewModels.cs" />
+    <Compile Include="Models\Queries.cs" />
     <Compile Include="Models\Standings\StandingsLoad.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="Startup.cs" />

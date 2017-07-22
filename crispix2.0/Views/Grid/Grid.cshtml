@@ -9,8 +9,30 @@
 </HEAD>
 <body>
     <div align="center">
-        <table width="824" border="0" cellpadding="0" cellspacing="0" bgcolor='#ffffff'>
-            <tr><td align="center"><%ShowGrid%></td></tr>
+        <table width='100%' border='1' cellspacing='0' cellpadding='0' align='center'>
+            <thead align='left' valign='bottom'>
+                <tr class='dataRow'>
+                    <td><b>Player</b></td>
+                    <td><b>Record</b></td>
+                    @for (int i = 1; i < 11; i++)
+                    {
+                        <td align='center'><b>@i</b></td>
+                    }
+
+                </tr>
+            </thead>
+            @foreach (var row in Model.GridList)
+            {
+                var nameAndRecord = row.username + "(" + row.record + ")";
+                <tr class='dataRow' onMouseOver="this.className='dataRowHili';" onMouseOut="this.className='dataRow';">
+                    <td>@row.username</td>
+                    <td>@row.record</td>
+                    @foreach (var pick in row.pix)
+                    {
+                        <td>@pick</td>
+                    }
+                </tr>
+            }
         </table>
     </div>
 </body>

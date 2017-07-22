@@ -14,9 +14,9 @@ namespace crispix2._0.Models.Grid
 
     public class GridRow
     {
-        string username;
-        string record;
-        string[] pix = new string[10];
+        public string username;
+        public string record;
+        public string[] pix = new string[10];
 
         public GridRow(string _username, string _record, string[] _pix)
         {
