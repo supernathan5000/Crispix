@@ -12,15 +12,16 @@ namespace crispix2._0.Models.Standings
     {
         public List<StandingsRow> StandingsList { get; set; }
         public int NumberOfWeeks = Utilities.GetNumberOfWeeks();
+        public List<string> weekNames;
     }
 
     public class StandingsRow
     {
+        public bool userPaid;
         public string username;
         public string record;
         public List<string> winLoss;
-        public bool userPaid;
-
+        
         public StandingsRow(string _username, string _record, string[] winsLosses, bool _userPaid)
         {
             username = _username;

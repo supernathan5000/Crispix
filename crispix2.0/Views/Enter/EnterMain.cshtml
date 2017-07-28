@@ -6,23 +6,40 @@
 </head>
 <body>
 <div>
-    <div align="center"><b>Login to make your pix</b></div>
-    <table width="600" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#990000">
-        <FORM method=post>
-            <input type="hidden" name="job" value="GetPix">
-            <TR><td align="center">
-                <table width="100%" border=0 cellspacing="3" cellpadding="0" bgcolor="#f3f3f3">
-                    <TR><td height="40" align="right"><b>Username:</b></td>
-                        <TD align="left"><input type="text" name="user_name" size="15" maxlength="15"></TD>
-                        <TD align="right"><b>Password:</b></TD>
-                        <TD align="left"><INPUT maxLength=15 name=password size=15 type=password></TD>
-                        <td align="center"><INPUT type=submit value="Make/update Pix"></td></tr></TABLE>
-            </td></TR></FORM></TABLE>
+    <table width="824" bgcolor="#ffffff">
+        <tbody>
+            <tr>
+                <td align="center">
+                    <br />
+                    <div align="center"><b>Login to make your pix</b></div>
+                    <table width="600" border="1" cellspacing="0" cellpadding="0" align="center" bordercolor="#990000">
+                        <FORM method=post>
+                            <input type="hidden" name="job" value="GetPix">
+                            <tr>
+                                <td align="center">
+                                    <table width="100%" border=0 cellspacing="3" cellpadding="0" bgcolor="#f3f3f3">
+                                        <tr>
+                                            <td height="40" align="right"><b>Username:</b></td>
+                                            <td align="left"><input type="text" name="user_name" size="15" maxlength="15"></td>
+                                            <td align="right"><b>Password:</b></td>
+                                            <td align="left"><INPUT maxLength=15 name=password size=15 type=password></td>
+                                            <td align="center"><INPUT type=submit value="Make/update Pix"></td>
+                                        </tr>
+                                    </table>
+                                </td>
+                            </tr>
+                        </FORM>
+                    </table>
 
-    @if (ViewBag.isPreseason)
-    {
-        Html.RenderPartial("_NewEntry");
-    }
+                    @if (ViewBag.isPreseason)
+                    {
+                        Html.RenderPartial("_NewEntry");
+                    }
+                </td>
+            </tr>
+        </tbody>
+    </table>
+    
 
 </div>
 </body>

@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using crispix2._0.Models.Standings;
+using crispix2._0.Models;
 
 namespace crispix2._0.Controllers
 {
@@ -12,18 +13,14 @@ namespace crispix2._0.Controllers
         // GET: Standings
         public ActionResult Standings()
         {
-            StandingsLoad standings = new StandingsLoad();
 
-            GetStandings(standings);
+            StandingsLoad model = new StandingsLoad();
 
-            return View(standings);
-        }
+            model.StandingsList = Queries.GetStandingsList();
 
-        private void GetStandings(StandingsLoad standings)
-        {
-            //build the query to get the standings
+            model.weekNames = Queries.GetWeekNames();
 
-            //foreach result create a StandingsRow and add it to the standings.StandingsList
+            return View(model);
         }
     }
 }

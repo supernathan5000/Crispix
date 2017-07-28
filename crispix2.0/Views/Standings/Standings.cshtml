@@ -11,20 +11,41 @@
 </HEAD>
 <body>
     <div align="center">
-        <table width="824" border="0" cellpadding="0" cellspacing="0" bgcolor='#ffffff'>
-            <tr>
-                <td align="center">
-                    <br>
-                    <div class='tagline'>
-                        <b>Standings</b><br><br>
-                    </div>
-                    <!-- Get the standings -->
-                    <!-- ShowMain() -->
-                    <div id="standingsTable">
-                        @Html.Partial("_StandingsTable");
-                    </div>
-                </td>
-            </tr>
+        <table width='100%' border='1' cellspacing='0' cellpadding='0' align='center'>
+            <thead align='left' valign='bottom'>
+                <tr class='dataRow'>
+                    <td><b>Player</b></td>
+                    <td><b>Record</b></td>
+                    @for (int i = 0; i < Model.weekNames.Count; i++)
+                    {
+                        <td align='center'><b>@Model.weekNames.ElementAt(i)</b></td>
+                    }
+
+                </tr>
+            </thead>
+            @foreach (var row in Model.StandingsList)
+            {
+                var nameAndRecord = row.username + "(" + row.record + ")";
+                <tr class='dataRow' onMouseOver="this.className='dataRowHili';" onMouseOut="this.className='dataRow';">
+                    @if (row.userPaid)
+                    {
+                        <td>@row.username</td>
+                    }
+                    else
+                    {
+                        <td class="redtext">@row.username</td>
+                    }
+
+                    <td>@row.record</td>
+                    @foreach (var winloss in row.winLoss)
+                    {
+                        if (!winloss.ToString().Equals("-"))
+                        {
+                            <td>@winloss</td>
+                        }
+                    }
+                </tr>
+            }
         </table>
     </div>
 </body>
@@ -33,71 +54,3 @@
 <script>
 
 </script>
-
-sub GetStandings
-getLock
-session.timeout = 120
-const adOpenDynamic = 1
-set con=Server.Createobject("ADODB.Connection")
-set rst=server.createobject("ADODB.Recordset")
-con.open dsn
-strSQL="Select weekname from games"
-rst.open strsql,con
-wknames=rst.getrows
-wkct=ubound(wknames,2)
-rst.close
-strSQL="Select lastchg from settings"
-rst.open strSQL, con
-upd=rst(0)
-rst.close
-l_upd = left(upd,len(upd)-6)
-r_upd = right(upd,3)
-upd = "<div id='tagline'>" & upd & "<br>*Now you can click on the headers to sort*</div>"
-strSQL="Select player,W,L,W1,L1,W2,L2,W3,L3,W4,L4,W5,L5,W6,L6,W7,L7,W8,L8,W9,L9,W10,L10,W11,L11," _
-  & "W12,L12,W13,L13,W14,L14,W15,L15,paid from players order by "
-if request.querystring("so").count = 1 then
-    strSQL = strSQL & trim(request.QueryString("so")) & ",player"
-   else
-    strSQL = strSQL & "L,player"
-	end if
-rst.open strsql,con
-num=-1
-if not rst.eof then
-   grid = rst.getrows
-   num = ubound(grid,2)
-   end if
-rst.close
-con.close
-end sub
-
-sub showmain
-dim dline,Locked
-    for x=0 to wkct
-    wknames(0,x)=replace(wknames(0,x)," ","
-    <br>")
-    response.write "
-    <td align='center' width=40><b><a href='standings.asp?so=L" & x+1 & "'>" & wknames(0,x) & "</a></b></td>"
-    next
-    response.write "
-    </tr>"
-    for x=0 to num
-    if trim(ucase(grid(33,x)))="Y" then
-    Uname = grid(0,x)
-    else
-    Uname = "
-    <span class='redtext'>" & grid(0,x) & "</span>"
-    end if
-    dline = "
-    <tr class='dataRow' onMouseOver="" this.className='dataRowHili' ;"" onMouseOut="" this.className='dataRow' ;"">
-        " _
-        & "
-        <td align='left'>&nbsp;" & x+1 & ".&nbsp;" & Uname & "&nbsp;" & "&nbsp;(" & grid(1,x) & "-" & grid(2,x) & ")</td>"
-        for y = 3 to 31 step 2
-        dline = dline & "
-        <td align='center'>" & grid(y,x) & "-" & grid(y+1,x) & "</td>"
-        next
-        response.write dline & "
-    </tr>"
-    next
-if num<40 then response.write "<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>"
-end sub %>

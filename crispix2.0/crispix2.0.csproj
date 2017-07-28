@@ -306,7 +306,6 @@
     <Content Include="Views\Grid\Grid.cshtml" />
     <Content Include="Views\Home\Index.cshtml" />
     <Content Include="Views\Enter\_NewEntry.cshtml" />
-    <Content Include="Views\Standings\_StandingsTable.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

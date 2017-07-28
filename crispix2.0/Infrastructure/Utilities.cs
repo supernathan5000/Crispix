@@ -47,6 +47,35 @@ namespace crispix2._0.Infrastructure
             return ConfigurationManager.AppSettings["currentWeek"];
         }
 
+        public static string GetGamesTable()
+        {
+            return ConfigurationManager.AppSettings["GamesTable"];
+        }
+
+        public static string GetPixTable()
+        {
+            return ConfigurationManager.AppSettings["PixTable"];
+        }
+
+        public static string GetPlayersTable()
+        {
+            return ConfigurationManager.AppSettings["PlayersTable"];
+        }
+
+        public static string GetRankingsTable()
+        {
+            return ConfigurationManager.AppSettings["RankingsTable"];
+        }
+
+        public static string GetSettingsTable()
+        {
+            return ConfigurationManager.AppSettings["SettingsTable"];
+        }
+
+        public static string GetTeamsTable()
+        {
+            return ConfigurationManager.AppSettings["TeamsTable"];
+        }
     }
         
 }

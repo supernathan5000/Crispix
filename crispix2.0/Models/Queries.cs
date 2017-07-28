@@ -4,23 +4,18 @@ using System.Configuration;
 using System.Data.OleDb;
 using System.Linq;
 using System.Web;
+using static crispix2._0.Infrastructure.Utilities;
 
 namespace crispix2._0.Models
 {
     public static class Queries
     {
-
-
-
         public static List<Grid.GridRow> CreateGrid(string week)
         {
             string connectionString = ConfigurationManager.AppSettings["ConnectionString"];
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
-
-
-                //var query = "SELECT PLAYER FROM PLAYERS ORDER BY PLAYER ASC";
                 var query = "SELECT PLAYERS.PLAYER, W & '-' & L as record, G1, G2, G3, G4, G5, G6, G7, G8, G9, G10 FROM PLAYERS INNER JOIN Pix ON (Week = " + week + " AND PLAYERS.PLAYER = Pix.Player)";
 
                 var command = new OleDbCommand(query, conn);
@@ -29,9 +24,6 @@ namespace crispix2._0.Models
                 var results = new List<Grid.GridRow>();
                 while (reader.Read())
                 {
-                    //System.Diagnostics.Debug.WriteLine(reader.GetString(0));
-                    //System.Diagnostics.Debug.WriteLine(reader.GetString(1));
-
                     var username = reader.GetString(0);
                     var record = reader.GetString(1);
                     var pix = new string[10];
@@ -41,12 +33,69 @@ namespace crispix2._0.Models
                     }
 
                     results.Add(new Grid.GridRow(username, record, pix));
-
                 }
 
                 return results;
             }
         }
+
+        public static List<string> GetWeekNames()
+        {
+            string connectionString = ConfigurationManager.AppSettings["ConnectionString"];
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                var query = "SELECT WeekName FROM GAMES ORDER BY WEEK Asc";
+
+                var command = new OleDbCommand(query, conn);
+                conn.Open();
+
+                var reader = command.ExecuteReader();
+                var results = new List<string>();
+                
+                while (reader.Read())
+                {
+                    results.Add(reader.GetString(0));
+                }
+
+                return results;
+            }
+        }
+
+        public static List<Standings.StandingsRow> GetStandingsList()
+        {
+            string connectionString = ConfigurationManager.AppSettings["ConnectionString"];
+
+            using (OleDbConnection conn = new OleDbConnection(connectionString))
+            {
+                var query = "SELECT PLAYERS.PLAYER, Paid, W & '-' & L, W1 & '-' & L1, W2 & '-' & L2, W3 & '-' & L3, W4 & '-' & L4, W5 & '-' & L5, W6 & '-' & L6 , " +
+                                                    "W7 & '-' & L7, W8 & '-' & L8, W9 & '-' & L9, W10 & '-' & L10, W11 & '-' & L11, W12 & '-' & L12, W13 & '-' & L13, " +
+                                                    "W14 & '-' & L14, W15 & '-' & L15 " +
+                             "FROM PLAYERS ORDER BY W DESC";
+                var command = new OleDbCommand(query, conn);
+                conn.Open();
+                var reader = command.ExecuteReader();
+                var results = new List<Standings.StandingsRow>();
+                while (reader.Read())
+                {
+                    var username = reader.GetString(0);
+
+                    //true if the user has paid, false otherwise
+                    var paid = reader.GetString(1).Equals("Y") ? true : false;
+                    var record = reader.GetString(2);
+                    var weeklyRecords = new string[15];
+                    for (int i = 0; i < 15; i++)
+                    {
+                        weeklyRecords[i] = reader.GetString(i + 3);
+                    }
+
+                    results.Add(new Standings.StandingsRow(username, record, weeklyRecords, paid));
+                }
+
+                return results;
+            }
+        }
+
 
         /// <summary>
         /// Executes a select query to retrieve data from the given table
