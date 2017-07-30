@@ -1,4 +1,6 @@
-﻿<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
+﻿@model crispix2._0.Models.Schedule.ScheduleLoad
+
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml">
 <HEAD>
     <script src="/includes/crispix.js" language="JavaScript"></script>
@@ -16,6 +18,56 @@
                         <b>Scheduled Games</b> (future games subject to change)
                         <br />
                         <br />
+                        <table border="0" bgcolor="#eeeeee" cellspacing="0" cellpadding="5" align="center">
+                            
+                            @for (int i = 0; i < Model.numRows; i++)
+                            {
+                                <tr>
+                                    
+                                    @for (int j = 0; j < 4; j++)
+                                    {
+                                        if ((4 * i) + j < Model.weeklyGames.Count)
+                                        {
+                                            var index = (4 * i) + j;
+                                            var week = Model.weeklyGames.ElementAt(index);
+                                            var bgcolor = "";
+
+                                            if ((index + 1).ToString() == ViewBag.currentWeek)
+                                            {
+                                                bgcolor = "#ffffff";
+                                            }
+
+                                            <td width="190" align="left" bgcolor="@bgcolor">&nbsp;
+                                                <b>@week.weekName</b>
+                                                <br />
+                                            
+                                                @for (int g = 0; g < 10; g++)
+                                                {
+                                                    var game = week.games.ElementAt(g);
+                                                    if (game.winner.Equals(game.home))
+                                                    {
+                                                        @:<b>@game.home</b> @game.winScore, @game.away @game.loseScore
+                                                    }
+                                                    else
+                                                    {
+                                                        @:@game.home @game.winScore, <b>@game.away</b> @game.loseScore
+                                                    }
+
+                                                    <text><br /></text>
+                                                }
+                                                <br />
+                                            </td>
+                                        }
+                                    }
+
+
+                                </tr>
+                            }
+
+
+
+
+                        </table>
                     </div>
                 </td>
             </tr>

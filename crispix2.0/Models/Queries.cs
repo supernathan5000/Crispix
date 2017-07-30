@@ -187,7 +187,59 @@ namespace crispix2._0.Models
 
             using (OleDbConnection conn = new OleDbConnection(connectionString))
             {
-                var query = 
+                var query = "SELECT WeekName, A1, H1, W1, L1, WS1, LS1, " +
+                                            "A2, H2, W2, L2, WS2, LS2, " +
+                                            "A3, H3, W3, L3, WS3, LS3, " +
+                                            "A4, H4, W4, L4, WS4, LS4, " +
+                                            "A5, H5, W5, L5, WS5, LS5, " +
+                                            "A6, H6, W6, L6, WS6, LS6, " +
+                                            "A7, H7, W7, L7, WS7, LS7, " +
+                                            "A8, H8, W8, L8, WS8, LS8, " +
+                                            "A9, H9, W9, L9, WS9, LS9, " +
+                                            "A10, H10, W10, L10, WS10, LS10 " +
+                             "FROM GAMES " +
+                             "WHERE WEEK <= " + GetCurrentWeek();
+
+                //Create the db command using the query and the connection and open the connection
+                var command = new OleDbCommand(query, conn);
+                conn.Open();
+
+                //Create a reader to process the results
+                var reader = command.ExecuteReader();
+
+                //Create a list of StandingsRow objects to return to the user
+                var results = new List<Schedule.ScheduleWeek>();
+
+                //Where there are rows left to process
+                while (reader.Read())
+                {
+                    string weekName = reader.GetString(0);
+                    string away;
+                    string home;
+                    string winner;
+                    string loser;
+                    int winScore;
+                    int loseScore;
+                    List<Schedule.ScheduleGame> week = new List<Schedule.ScheduleGame>();
+
+
+                    for (int i = 1; i <= 10; i++)
+                    {
+                        away      = reader.GetString((6 * i) - 5);
+                        home      = reader.GetString((6 * i) - 4);
+                        winner    = reader.GetString((6 * i) - 3);
+                        loser     = reader.GetString((6 * i) - 2);
+                        winScore  = reader.GetInt16((6 * i)-1);
+                        loseScore = reader.GetInt16((6* i));
+
+                        var game = new Schedule.ScheduleGame(home, away, winner, loser, winScore, loseScore);
+                        week.Add(game);
+                    }
+
+                    results.Add(new Schedule.ScheduleWeek(weekName, week));
+                }
+                conn.Close();
+                return results;
             }
         }
 

@@ -17,6 +17,25 @@ namespace crispix2._0.Controllers
 
             model.weeklyGames = Queries.GetSchedule();
 
+            if (model.weeklyGames.Count < 5)
+            {
+                model.numRows = 1;
+            }
+            else if (model.weeklyGames.Count < 9)
+            {
+                model.numRows = 2;
+            }
+            else if (model.weeklyGames.Count < 13)
+            {
+                model.numRows = 3;
+            }
+            else
+            {
+                model.numRows = 4;
+            }
+
+            ViewBag.currentWeek = Utilities.GetCurrentWeek();
+
             return View(model);
         }
     }

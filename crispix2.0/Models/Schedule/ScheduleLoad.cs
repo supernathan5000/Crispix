@@ -10,15 +10,38 @@ namespace crispix2._0.Models.Schedule
     public class ScheduleLoad
     {
         public List<ScheduleWeek> weeklyGames { get; set; }
+        public int numRows { get; set; }
     }
 
     public class ScheduleWeek
     {
-        public List<Tuple<string, string>> games;
+        public string weekName;
+        public List<ScheduleGame> games;
 
-        public ScheduleWeek(List<Tuple<string, string>> matches)
+        public ScheduleWeek(string _weekName, List<ScheduleGame> _games)
         {
-            games = matches;
+            weekName = _weekName;
+            games = _games;
+        }
+    }
+
+    public class ScheduleGame
+    {
+        public string home;
+        public string away;
+        public string winner;
+        public string loser;
+        public int winScore;
+        public int loseScore;
+
+        public ScheduleGame(string _home, string _away, string _winner, string _loser, int _winScore, int _loseScore)
+        {
+            home = _home;
+            away = _away;
+            winner = _winner;
+            loser = _loser;
+            winScore = _winScore;
+            loseScore = _loseScore;
         }
     }
 }
